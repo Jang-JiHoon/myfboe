@@ -1,0 +1,76 @@
+body {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #fff;
+}
+a {
+  text-decoration: none;
+}
+
+.inner {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/*HEADER*/
+header {
+  height: 550px;
+  background-image: url("/static/images/nota_bg.jpg");
+  background-size: cover;
+  position: relative;
+}
+header > .inner {
+  height: 101px;
+}
+header .logo {
+  position: absolute;
+  top: 30px;
+  bottom: 0;
+  left: -150px;
+  margin: auto;
+}
+header ul.menu {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  font-family: Arial, sans-serif;
+}
+header ul.menu li {
+  position: relative;
+}
+header ul.menu li::before {
+  content: "";
+  width: 1px;
+  height: 12px;
+  background-color: #e5e5e5;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+header ul.menu li:first-child:before {
+  display: none;
+}
+header ul.menu li a {
+  font-weight: 800;
+  padding: 11px 16px;
+  display: block;
+  font-size: 16px;
+  color: #fff;
+}
+header .content {
+  position: absolute;
+  bottom: 70px;
+  left: 60px;
+}
+header .content h1 {
+  font-size: 61px;
+}
+header .content h4 {
+  font-size: 20px;
+  margin: 32px 20px;
+}

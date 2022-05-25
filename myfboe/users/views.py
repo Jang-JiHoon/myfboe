@@ -1,48 +1,81 @@
-from django.contrib.auth import get_user_model
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.messages.views import SuccessMessageMixin
+from django.shortcuts import render
+from .forms import ContactUsForm, MeetingForm
 from django.urls import reverse
-from django.utils.translation import gettext_lazy as _
-from django.views.generic import DetailView, RedirectView, UpdateView
-
-User = get_user_model()
-
-
-class UserDetailView(LoginRequiredMixin, DetailView):
-
-    model = User
-    slug_field = "username"
-    slug_url_kwarg = "username"
+from django.http import HttpResponseRedirect
+from .models import Person, Meeting
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
 
 
-user_detail_view = UserDetailView.as_view()
+
+def main(request):
+    if request.method == 'GET': 
+        return render(request, "users/main.html")
+
+def contactus(request):
+    if request.method=='GET':
+        form = ContactUsForm()
+
+        return render(request,'users/contactus.html',{'form':form})
+
+    elif request.method == 'POST':
+        form = ContactUsForm(request.POST)
+
+        if form.is_valid():
+            
+
+            obj = Person(email_name = form.cleaned_data['email_name'],
+            name = form.cleaned_data['name'],
+            message_name = form.cleaned_data['message_name']
+            )
+            obj.save()
+            
+            # if user is not None:
+            #     login(request, user)
+            #     return HttpResponseRedirect(reverse('posts:index'))
+        else:
+            messages.error(request,"Error")
+            return render(request,'users/contactus.html',{'form':form})
+     
+        return render(request, "users/commit.html")  
 
 
-class UserUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+def meeting(request):
+    if request.method=='GET':
+        form = MeetingForm()
 
-    model = User
-    fields = ["name"]
-    success_message = _("Information successfully updated")
+        return render(request,'users/meeting.html',{'form':form})
 
-    def get_success_url(self):
-        assert (
-            self.request.user.is_authenticated
-        )  # for mypy to know that the user is authenticated
-        return self.request.user.get_absolute_url()
+    elif request.method == 'POST':
+        form = MeetingForm(request.POST)
 
-    def get_object(self):
-        return self.request.user
+        if form.is_valid():
+            
+
+            obj = Meeting( 
+            company = form.cleaned_data['company'],
+            industry = form.cleaned_data['industry'],
+            firstname = form.cleaned_data['firstname'],
+            lastname = form.cleaned_data['lastname'],
+            jobtitle = form.cleaned_data['jobtitle'],
+            email = form.cleaned_data['email'],
+            MM = form.cleaned_data['MM'],
+            DD = form.cleaned_data['DD'],
+            YYYY = form.cleaned_data['YYYY'],
+            message = form.cleaned_data['message'],
+            
+            )
+            obj.save()
+            
+            # if user is not None:
+            #     login(request, user)
+            #     return HttpResponseRedirect(reverse('posts:index'))
+        else:
+            messages.error(request,"Error")
+            return render(request,'users/meeting.html',{'form':form})
+     
+        return render(request, "users/commit.html")     
 
 
-user_update_view = UserUpdateView.as_view()
-
-
-class UserRedirectView(LoginRequiredMixin, RedirectView):
-
-    permanent = False
-
-    def get_redirect_url(self):
-        return reverse("users:detail", kwargs={"username": self.request.user.username})
-
-
-user_redirect_view = UserRedirectView.as_view()
+def commit(request):
+    return render(request, "users/main.html")

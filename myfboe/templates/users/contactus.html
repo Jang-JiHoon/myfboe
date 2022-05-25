@@ -1,0 +1,28 @@
+<div class="container"> 
+    <div class="item"> 
+        <form action="{% url 'users:contactus' %}" class="sign" method="post">
+            {% csrf_token %}
+            
+            
+            {% comment %} <input type="text" name="name"placeholder="name 입력하세요." />
+            <input type="text" name="email_name" placeholder="email_name 입력하세요." />
+            <input type="text" name="message_name" placeholder="message_name 입력하세요." /> {% endcomment %}
+            
+            
+            {% comment %} <input type="submit" value="제출하기" class="btn1"> {% endcomment %}
+            {% for field in form%}
+            <div class="form_group">
+                <label for="{{field.id_for_label}}">{{field.label}}</label>
+                <input type="{{field.field.widget.input_type}}" class="form-control" id="{{field.id_for_label}}" placeholder="{{field.label}}" name="{{field.name}}">
+            </div>
+                {% if field.errors %}
+                    <span style = "color:red">{{field.errors}}</span>
+                {% endif %}
+            {% endfor %}
+            <input type="submit" value="제출하기" class="btn1">
+        </form>
+        <a href="{%url 'users:main' %}" ><button>돌아가기</button></a>
+    </div>
+</div>
+{% comment %} {% for field in form %}
+{% endfor %} {% endcomment %}
