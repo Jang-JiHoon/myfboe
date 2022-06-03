@@ -44,7 +44,7 @@ LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 DATABASES = {
     "default": env.db(
         "DATABASE_URL",
-        default="postgres://postgres:4968@localhost:5432/fboeDB",
+        default="postgres://admin@fboe.lan:fb@@ee@localhost:5432/fboeDB",
     ),
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
