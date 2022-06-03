@@ -6,5 +6,6 @@ urlpatterns = [
     path('', views.main, name='main'),
     path('contact us/', views.contactus, name='contactus'),
     path('meeting/', views.meeting, name='meeting'),
-    path('commit/', views.commit, name='commit')
+    path('commit/', views.commit, name='commit'),
+    
 ]

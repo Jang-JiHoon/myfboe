@@ -44,7 +44,7 @@ LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 DATABASES = {
     "default": env.db(
         "DATABASE_URL",
-        default="postgres://admin@fboe.lan:fb@@ee@localhost:5432/fboeDB",
+        default="postgres://postgres:4968@localhost:5432/fboeDB",
     ),
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
@@ -70,6 +70,7 @@ DJANGO_APPS = [
     # "django.contrib.humanize", # Handy template tags
     "django.contrib.admin",
     "django.forms",
+    "gmailapi_backend",
 ]
 THIRD_PARTY_APPS = [
     "crispy_forms",
@@ -217,7 +218,15 @@ X_FRAME_OPTIONS = "DENY"
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
 EMAIL_BACKEND = env(
     "DJANGO_EMAIL_BACKEND",
-    default="django.core.mail.backends.smtp.EmailBackend",
+    default="django.core.mail.backends.console.EmailBackend",
+    # EMAIL_HOST = 'smtp.gmail.com',
+    # EMAIL_HOST_USER = 'wlgns1881@gmail.com',
+    # EMAIL_HOST_PASSWORD = 'guswn3484@',
+    # EMAIL_PORT = 587,
+    # EMAIL_USE_TLS = True,
+    # DEFAULT_FROM_EMAIL = 'wlgns1881@gmail.com',
+
+    
 )
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-timeout
 EMAIL_TIMEOUT = 5
@@ -277,3 +286,4 @@ SOCIALACCOUNT_FORMS = {"signup": "myfboe.users.forms.UserSocialSignupForm"}
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+

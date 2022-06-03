@@ -27,7 +27,15 @@ CACHES = {
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
 EMAIL_BACKEND = env(
-    "DJANGO_EMAIL_BACKEND", default="django.core.mail.backends.console.EmailBackend"
+    "DJANGO_EMAIL_BACKEND",
+    default="django.core.mail.backends.smtp.EmailBackend",
+    # EMAIL_HOST = 'smtp.gmail.com',
+    # EMAIL_HOST_USER = 'wlgns1881@gmail.com',
+    # EMAIL_HOST_PASSWORD = 'guswn3484@',
+    # EMAIL_PORT = 587,
+    # EMAIL_USE_TLS = True,
+    # DEFAULT_FROM_EMAIL = 'wlgns1881@gmail.com',
+    
 )
 
 # django-debug-toolbar
@@ -52,3 +60,17 @@ INSTALLED_APPS += ["django_extensions"]  # noqa F405
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+import socket
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_IP = socket.gethostbyname(EMAIL_HOST)
+EMAIL_HOST_USER = 'ulsan@fboeit.com'
+EMAIL_HOST_PASSWORD = 'fboe0719!'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+# GMAIL_API_CLIENT_ID  =  'fboe@fboeit.com' 
+# GMAIL_API_CLIENT_SECRET  =  'fboe0719!' 
+# GMAIL_API_REFRESH_TOKEN  =  'refresh_token'
