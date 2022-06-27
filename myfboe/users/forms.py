@@ -65,8 +65,8 @@ class ContactUsForm(django_forms.ModelForm):
 class MeetingForm(django_forms.ModelForm):
     class Meta:
         model = Meeting
-        fields = ['company','industry','firstname','lastname','jobtitle','email','MM','DD','YYYY','message']
-
+        fields = ['company','industry','firstname','lastname','jobtitle','email','message']
+        # 'MM','DD','YYYY',
         widgets = {
             'company': django_forms.TextInput(attrs={'placeholder' : 'company'}),
             'industry': django_forms.TextInput(attrs={'placeholder' : 'industry'}),
@@ -74,9 +74,9 @@ class MeetingForm(django_forms.ModelForm):
             'lastname': django_forms.TextInput(attrs={'placeholder' : 'lastname'}),
             'jobtitle': django_forms.TextInput(attrs={'placeholder' : 'jobtitle'}),
             'email': django_forms.TextInput(attrs={'placeholder' : 'email'}),
-            'MM': django_forms.TextInput(attrs={'placeholder' : 'MM'}),
-            'DD': django_forms.TextInput(attrs={'placeholder' : 'DD'}),
-            'YYYY': django_forms.TextInput(attrs={'placeholder' : 'YYYY'}),
+            # 'MM': django_forms.TextInput(attrs={'placeholder' : 'MM'}),
+            # 'DD': django_forms.TextInput(attrs={'placeholder' : 'DD'}),
+            # 'YYYY': django_forms.TextInput(attrs={'placeholder' : 'YYYY'}),
             'message': django_forms.TextInput(attrs={'placeholder' : 'message'}),
         }
 

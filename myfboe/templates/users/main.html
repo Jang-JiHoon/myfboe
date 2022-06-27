@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% comment %} <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -43,4 +43,292 @@
 
 
 </body>
+</html> {% endcomment %}
+
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <title>FBOE</title>
+  <!-- SWIPER-->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <link rel="stylesheet" href="/static/css/main.css">
+  <script src="https://kit.fontawesome.com/f78e61feb7.js" crossorigin="anonymous"></script>
+  <script defer src="/static/js/main.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="inner">
+      <nav class="navbar">
+        <div class="navbar__logo">
+          <a href="/">
+            <img src="/static/images/name.png" alt="">
+          </a>
+        </div>
+
+        <ul class="navbar__menu">
+          <li>
+            <a href="javascript:void(0)">Home</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">Solutions</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">About Us</a>
+          </li>
+          <li>
+            <a href="/meeting">Meeting</a>
+          </li>
+        </ul>
+
+        <a href="javascript:void(0)" class="navbar__toogleBtn">
+          <i class="fa-solid fa-bars"></i>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- video -->
+  <section class="video">
+    <video controls src="/static/video/video.mp4"></video>
+  </section>
+
+  <!-- visual
+  <section class="visual">
+    <div class="inner">
+      <h4 class="slogan">Think! Optimally <Br> AI Solution</Br></h4>
+    </div>
+  </section> -->
+
+  <!-- Vision -->
+  <section class="vision">
+    <div class="inner">
+      <div class="vision-description">
+        <h3>Our vision</h3>
+        <p>It is to form a bright future with people-centered thinking skills by proving infinite value based on trust
+          and improving creative thinking skills that maximize efficiency.
+        </p>
+      </div>
+    </div>
+    <div class="large-inner">
+      <div class="img-box">
+        <div class="img">
+          <img src="/static/images/TRUST.png" alt="">
+        </div>
+        <div class="img">
+          <img src="/static/images/CREATIVE.png" alt="">
+        </div>
+        <div class="img">
+          <img src="/static/images/FUTURE.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="experience">
+    <div class="large-inner">
+      <h3>Our Expreience</h3>
+      <!-- <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./images/reference.png" alt="img">
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/reference2.png" alt="img">
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/reference3.png" alt="img">
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/reference4.png" alt="img">
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/reference.png" alt="img">
+          </div>
+        </div>
+      </div> -->
+      <ul class="experience__contents">
+        <li class="content__item">
+          <ul>
+            <li class="item__text">
+              <h4>Title</h4>
+              <p>reference__content reference__content reference__content reference__content reference__content
+                reference__content reference__content reference__content reference__content
+              </p>
+            </li>
+            <li class="item__img">
+              <img src="/static/images/reference.png" alt="">
+            </li>
+          </ul>
+        </li>
+        <li class="content__item">
+          <ul>
+            <li class="item__img">
+              <img src="/static/images/reference2.png" alt="">
+            </li>
+            <li class="item__text">
+              <h4>Title</h4>
+              <p>reference__content reference__content reference__content reference__content reference__content
+                reference__content reference__content reference__content reference__content
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li class="content__item">
+          <ul>
+            <li class="item__text">
+              <h4>Title</h4>
+              <p>reference__content reference__content reference__content reference__content reference__content
+                reference__content reference__content reference__content reference__content
+              </p>
+            </li>
+            <li class="item__img">
+              <img src="/static/images/reference3.png" alt="">
+            </li>
+          </ul>
+        </li>
+        <li class="content__item">
+          <ul>
+            <li class="item__img">
+              <img src="/static/images/reference4.png" alt="">
+            </li>
+            <li class="item__text">
+              <h4>Title</h4>
+              <p>reference__content reference__content reference__content reference__content reference__content
+                reference__content reference__content reference__content reference__content
+              </p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+  </section>
+
+  <!-- Solution -->
+  <section class="solution">
+    <div class="inner">
+      <h3>Our Solutions</h3>
+      <p>It is to form a bright future with people-centered thinking skills by proving infinite value based on trust
+        and improving creative thinking skills that maximize efficiency.
+      </p>
+      <div class="solution-box">
+        <div class="img">
+          <img src="/static/images/solution_one.png" alt="">
+          <div class="img__btn">
+            <a href="javascript:void(0)" class="btn">learn more</a>
+          </div>
+        </div>
+        <div class="img">
+          <img src="/static/images/solution_two.png" alt="">
+          <div class="img__btn">
+            <a href="javascript:void(0)" class="btn">learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="awards">
+    <div class="large-inner">
+      <h3>AWARDS</h3>
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="inner">
+      <div class="contact__frame">
+        <div class="contact__frame__left">
+          <div class="title">Contact us</div>
+          <div class="mail">이메일</div>
+          <div class="number">전화번호</div>
+        </div>
+        <div class="table">
+          
+          <form action="{% url 'users:contactus' %}" class="sign" method="post">
+            {% csrf_token %}
+
+
+            <div class="name">Name
+              <div class="name__all">
+                <div class="name__first"><input type="text"  name="name" placeholder="First Name"><br>First Name</div>
+                
+              </div>
+            </div>
+            <div class="guest__email">Email<br><input type="text" name="email_name" placeholder="Email"></div>
+            <div class="message">Message<br><input type="text" id="" cols="30" rows="15" name="message_name" placeholder="Message"></input></div>
+            {% csrf_token %}
+            
+
+          {% comment %} <form action="{% url 'users:contactus' %}" class="sign" method="post">
+            {% csrf_token %}
+            
+            
+          
+            {% for field in form%}
+            <div class="form_group">
+                <label for="{{field.id_for_label}}">{{field.label}}</label>
+                <input type="{{field.field.widget.input_type}}" class="form-control" id="{{field.id_for_label}}" 
+                placeholder="{{field.label}}" name="{{field.name}}">
+            </div>
+                {% if field.errors %}
+                    <span style = "color:red">{{field.errors}}</span>
+                {% endif %}
+            {% endfor %}
+            <input type="submit" value="제출하기" class="btn1">
+          </form> {% endcomment %}
+
+      
+
+
+
+
+          <div class="click">
+
+        
+            <input class="bt" type="submit" value="send"></a>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="inner">
+      <img src="/static/images/name.png" alt="logo">
+      <p>Copyright © 2022. Nota Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+
 </html>

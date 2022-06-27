@@ -109,9 +109,9 @@ def meeting(request):
             lastname = form.cleaned_data['lastname'],
             jobtitle = form.cleaned_data['jobtitle'],
             email = form.cleaned_data['email'],
-            MM = form.cleaned_data['MM'],
-            DD = form.cleaned_data['DD'],
-            YYYY = form.cleaned_data['YYYY'],
+            # MM = form.cleaned_data['MM'],
+            # DD = form.cleaned_data['DD'],
+            # YYYY = form.cleaned_data['YYYY'],
             message = form.cleaned_data['message'],
             
             )
@@ -127,9 +127,9 @@ def meeting(request):
             "lastname": request.POST['lastname'],
             "jobtitle": request.POST['jobtitle'],
             "email": request.POST['email'],
-            "MM": request.POST['MM'],
-            "DD": request.POST['DD'],
-            "YYYY": request.POST['YYYY'],
+            # "MM": request.POST['MM'],
+            # "DD": request.POST['DD'],
+            # "YYYY": request.POST['YYYY'],
             "message": request.POST['message'],
 
             

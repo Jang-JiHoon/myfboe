@@ -69,7 +69,7 @@ class MeetingAdmin(admin.ModelAdmin):
 
     form = MeetingForm
     fieldsets = (
-        (_("Personal info"), {"fields": ('company','industry','firstname','lastname','jobtitle','email','MM','DD','YYYY','message','status')}),
+        (_("Personal info"), {"fields": ('company','industry','firstname','lastname','jobtitle','email','message','status')}),
     )
     list_filter = ('status',)
     list_display = ['company','industry','styled_status']

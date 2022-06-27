@@ -1,28 +1,97 @@
-<div class="container"> 
-    <div class="item"> 
-        <form action="{% url 'users:meeting' %}" class="sign" method="post">
-            {% csrf_token %}
-            
-            
-            {% comment %} <input type="text" name="name"placeholder="name 입력하세요." />
-            <input type="text" name="email_name" placeholder="email_name 입력하세요." />
-            <input type="text" name="message_name" placeholder="message_name 입력하세요." /> {% endcomment %}
-            
-            
-            {% comment %} <input type="submit" value="제출하기" class="btn1"> {% endcomment %}
-            {% for field in form%}
-            <div class="form_group">
-                <label for="{{field.id_for_label}}">{{field.label}}</label>
-                <input type="{{field.field.widget.input_type}}" class="form-control" id="{{field.id_for_label}}" placeholder="{{field.label}}" name="{{field.name}}">
-            </div>
-                {% if field.errors %}
-                    <span style = "color:red">{{field.errors}}</span>
-                {% endif %}
-            {% endfor %}
-            <input type="submit" value="제출하기" class="btn1">
-        </form>
-        <a href="{%url 'users:main' %}" ><button>돌아가기</button></a>
-    </div>
-</div>
-{% comment %} {% for field in form %}
-{% endfor %} {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+        function test(){
+            if(document.getElementById("company").value==""){
+                alert("company");
+                return;
+            }
+            if(document.getElementById("industry").value==""
+                    ||isNaN(document.getElementById("industry").value)){
+                alert("industry");
+                return;
+            }
+            if(document.getElementById("firstname").value==""
+                    ||isNaN(document.getElementById("firstname").value)){
+                alert("firstname");
+                return;
+            }
+            if(document.getElementById("lastname").value==""
+                    ||isNaN(document.getElementById("lastname").value)){
+                alert("lastname");
+                return;
+            }
+            if(document.getElementById("jobtitle").value==""
+                    ||isNaN(document.getElementById("jobtitle").value)){
+                alert("jobtitle");
+                return;
+            }
+            if(document.getElementById("jobtitle").value==""
+                    ||isNaN(document.getElementById("jobtitle").value)){
+                alert("jobtitle");
+                return;
+            }
+            if(document.getElementById("message").value==""
+                    ||isNaN(document.getElementById("message").value)){
+                alert("message");
+                return;
+            }
+            document.getElementById("frm").submit();
+        }
+    </script>
+    
+</head>
+<body>
+  <section class="contact">
+    <div class="container"> 
+      <div class="item"> 
+          <form action="{% url 'users:meeting' %}" class="sign" method="post">
+              {% csrf_token %}
+              
+              
+              <div>
+                  <label for="meeting"></label>
+                  <input type="text" name="company" id="company" placeholder="Company">
+                  
+              </div>
+              <div>
+                  <label for="meeting"></label>
+                  <input type="text" name="industry" id="industry" placeholder="Industry">
+              </div>
+              <div>
+                  <label for="meeting"></label>
+                  <input type="text" name="firstname" id="firstname" placeholder="First Name">
+              </div>
+              <div>
+                  <label for="meeting"></label>
+                  <input type="text" name="lastname" id="lastname">
+              </div>
+              <div>
+                  <label for="meeting"></label>
+                  <input type="text" name="jobtitle" id="jobtitle">
+              </div>
+              <div>
+                  <label for="meeting"></label>
+                  <input type="text" name="email" id="email">
+              </div>
+              <div>
+                  <label for="meeting"></label>
+                  <textarea name="message" id="message" cols="30" rows="15" placeholder="Message"></textarea>
+              </div>
+              
+              <input type="submit" value="제출하기" class="btn1" onclick="test()">
+              
+              
+          </form>
+          <a href="{%url 'users:main' %}" ><button>돌아가기</button></a>
+      </div>
+  </div>
+
+  </section> 
+</body>
+</html>
